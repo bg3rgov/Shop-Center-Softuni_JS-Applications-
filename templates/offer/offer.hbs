@@ -1,0 +1,29 @@
+<tr>
+    <td class="">{{inc @index}}</td>
+    <td class="">{{product}}</td>
+    <td class="description">{{description}}</td>
+    <td class="">{{price}}</td>
+    <td>
+        <a href='#/details/{{objectId}}' class="btn-primary btn">Order details</a>
+    </td>
+    <td>
+    {{#if isOwnOffer}}
+        <a href='#/delete/{{objectId}}' class="btn-danger btn">Delete</a>
+        <a href='#/edit/{{objectId}}' class="btn-info btn">Edit</a>
+    {{else}}
+        {{#unless sold}}
+        <a href='#/buy/{{objectId}}' class="btn-warning btn">Buy</a
+        {{else}}
+        <p></p>
+        {{/unless}}
+    {{/if}}
+    </td>
+    
+    <td>
+    {{#if sold}}
+        <p>SOLD</p>
+    {{else}}
+        <p>AVAILABLE</p>
+    {{/if}}
+    </td>
+</tr>
